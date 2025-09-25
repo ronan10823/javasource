@@ -26,17 +26,17 @@ public class SwitchEx1 {
         // }
         // System.out.println("현재 계절은 " + season + "입니다.");
 
-
-
-        switch (month) {
-            case 3:
+        // 조건식을 계산한다. => 조건식과 일치하는 case 문으로 이동 -> 문장 수행 -> break나 witch 구문의 끝을 만남녀 switch 문 빠져나감 
+        // 조건식 결과는 정수, 문자열만 가능
+        switch (month) {   // 여기에서 정의했기에 아래에서 사용 가능했다. 
+            case 3: // case 오른쪽으로 오는 값은 변수..였나? 
             case 4:
-            case 5:
+            case 5: // month가 3, 4, 5와 같으면 다음과 같은 문구를 출력한다.
                 System.out.println("현재 계절은 봄입니다.");
                 break;
             case 6:
             case 7:
-            case 8:
+            case 8: // 왜 break를 사용해야 할까?
                 System.out.println("현재 계절은 여름입니다.");
                 break;
             case 9:

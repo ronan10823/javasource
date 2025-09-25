@@ -45,6 +45,34 @@ public class IfEx2 {
         // if 구문에서 grade라는 공통적인 변수를 사용하려면, if 내부가 아닌, 바깥으로 grade라는 변수를 빼면 된다. 특히, 위로. (중요!)
         // if 구문 내에서 선언된 변수는 if 구문 내부에서만 사용 가능 + if 구문 바깥에서 선언된 변수는 if 구문 내부에서도 사용 가능
         // 변수의 유효 범위(scope)는 변수가 선언된 위치에 따라 결정됨
+
+        switch (score) {  // 이럴 땐 if else가 더 적합하다. 
+            case 100:
+            case 99:
+                grade = 'A';
+                break;
+        
+            default:
+                break;
+        }
+
+        switch (score / 10) { // 그렇지만, 이렇게 좀 더 간단하게 바꿀 수도 있다.
+            case 10:
+            case 9:
+                grade = 'A';
+                break;
+            case 8:
+                grade = 'B';
+                break;
+            case 7:
+                grade = 'C';
+                break;
+            default:
+                grade = 'D';
+                break;
+        }
+
+
         sc.close();
     }
 }
