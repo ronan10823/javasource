@@ -25,7 +25,6 @@ public class ExamEx2 {
         // }
 
         int min = a;
-
         if (min > b) {
             min = b;
         } 
