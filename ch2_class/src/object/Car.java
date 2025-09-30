@@ -29,6 +29,11 @@ public class Car {
         this.model = model;
     }
 
+    // public Car(String companyName, String color) {
+    //     this.companyName = companyName;
+    //     this.color = color;
+    // }
+
 
     public Car(String companyName, String model, String color) {
         this.companyName = companyName;
@@ -38,6 +43,13 @@ public class Car {
 
 
     public Car(String companyName, String model, String color, int maxSpeed) {
+        this.companyName = companyName;
+        this.model = model;
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+    }
+
+    public Car(String companyName, String model, int maxSpeed, String color) {
         this.companyName = companyName;
         this.model = model;
         this.color = color;

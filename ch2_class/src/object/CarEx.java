@@ -2,7 +2,12 @@ package object;
 
 public class CarEx {
     public static void main(String[] args) {
+    
+        int x = 10;
+    
         // 인스턴스 생성 : 생성자가 내부적으로 호출된다.
+    
+    
         Car car = new Car();
 
         car.companyName = "현대";
@@ -36,5 +41,36 @@ public class CarEx {
         // set 메서드 : 입력 X => 초기화
         // set 메서드 : 입력 O => 기존값 변경
         System.out.println("색상 지정 후 car3 " + car3);
+
+
+        // println(car);
+        println(car2);
+        // println(car3);
+        // println(car4);
+        // println(car5);
+
+        // car2 println 호출 후 색상 값 변경 여부
+        System.out.println(car2);
     }
+
+    public static void println(Car car) {
+        car.setColor("빨강");
+
+        System.out.println("---------------------------");
+        System.out.println("제조회사 : " + car.getCompanyName());
+        System.out.println("모델명 : " + car.getModel());
+        System.out.println("색상 : " + car.getColor());
+        System.out.println("최고속도 : " + car.getMaxSpeed());
+        System.out.println("---------------------------");
+    }
+    // void 리턴 타입, println 메소드, (Car car) 매개 변수 타입
+    // 매개변수 타입으로 보통 기본타입을 써왔지만, 클래스(String 포함)와 같은 참조 타입도 가능하다. 
+    // main에서 println을 호출할 수 있다. Car 타입에 해당하는 car, car2, 등만 매개 변수로 호출 가능
+    
+    public static void test(String str){
+
+    }
+    // String 등의 대문자는 주소가 전달되고, int 등의 소문자는 값이 저장된다.
+
+
 }
