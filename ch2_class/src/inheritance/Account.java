@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.Scanner;
+
 public class Account {
     // 은행 계좌
     // 계좌번호(122-11-11111), 계좌주(홍길동), 잔액(10000, long)
@@ -7,6 +9,8 @@ public class Account {
     private String accountNo;
     private String owner;
     private long balance;
+    
+    Scanner sc = new Scanner(System.in);
     
     // 기능: 입금한다(잔액 = 잔액 + 입금액), 출금한다(잔액 = 잔액 - 출금액)
     // 입금한다 => 입금액을 인자로 받아서 처리, 리턴 타입 없음, deposit > setter
@@ -25,12 +29,22 @@ public class Account {
         return balance;
     }
 
-    // 위의 두 개를 쓰라고 했을때 전혀 못 썼다. 
 
-    // 일부러 전체선택만 만들었다.
-    public Account(String accountNo, String owner, long balance) {
+
+    public Account(String accountNo) {
         this.accountNo = accountNo;
+    }
+    
+    public Account(String accountNo, String owner) {
+        // this.accountNo = accountNo;
+        this(accountNo);
         this.owner = owner;
+    }
+
+    public Account(String accountNo, String owner, long balance) {
+        // this.accountNo = accountNo;
+        // this.owner = owner;
+        this(accountNo, owner);
         this.balance = balance;
     }
     
