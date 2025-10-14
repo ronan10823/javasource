@@ -30,8 +30,8 @@ public class MyShop implements IShop {
             System.out.printf("[%d]%s(%s)\n", i++, user.getName(), user.getPayType());
         }
         // for (int j = 0; j < users.length; j++) {
-            //     System.out.printf("[%d]%s(%s)\n", j, users[j].getName(), users[j].getPayType());
-            // }
+        //         System.out.printf("[%d]%s(%s)\n", j, users[j].getName(), users[j].getPayType());
+        //     }
             
             System.out.println("[x]종 료");
             System.out.println("선택 : ");
