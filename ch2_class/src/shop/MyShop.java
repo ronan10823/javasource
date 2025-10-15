@@ -89,6 +89,12 @@ public class MyShop implements IShop {
                     int no = Integer.parseInt(sel);
                     i = 0;
                     for (Product product : carts) {
+                        for (int j = 0; j < carts.length; j++) {
+                            if (carts[j] == null) {
+                                carts[j] = products[no];
+                                break;
+                            }
+                        }
                 if (product == null) {
                     carts[i] = products[no]; //카트에 담기
                     i++;
@@ -97,12 +103,6 @@ public class MyShop implements IShop {
 
             }
 
-            for (int j = 0; j < carts.length; j++) {
-                if (carts[j] == null) {
-                    carts[j] = products[no];
-                    break;
-                }
-            }
             // 상품 목록 보여주기
             productList();
             break;

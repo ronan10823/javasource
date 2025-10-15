@@ -17,8 +17,6 @@ public class Value {
                 }
             }
             return false;
-        
-            
         }
         
         @Override
