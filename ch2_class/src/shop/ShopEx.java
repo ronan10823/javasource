@@ -29,10 +29,11 @@ public class ShopEx {
         //     product.printDetail();
         // }
 
+
         // User user = new User("홍길동", PayType.CARD); 
 
-
-        MyShop myShop = new MyShop();
+        // MyShop myShop = new MyShop(); //   배열일 때에는 이렇게, 
+        MyShop2 myShop = new MyShop2(); // List
         // 이름 지정
         myShop.setTitle("MyShop");
         //사용자 등록

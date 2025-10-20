@@ -28,7 +28,9 @@ public class SetEx2 {
         // Collections.sort(set); -> List<T> list만 받는다. = 그러므로 set을 list로 변환하면 된다. 
         List<Integer> list = new LinkedList<>(set);
         Collections.sort(list);
-        System.out.println(list);
+        System.out.println(list);   
+
+        list.forEach(null);
 
         Collections.sort(null);
 

@@ -1,17 +1,21 @@
-    package shop;
+package shop;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class MyShop implements IShop {
+public class MyShop2 implements IShop {
     private String title;
-    Product[] products = new Product[5];
+    // Product[] products = new Product[5]; 
+    List<Product> products = new ArrayList<>();
 
     // 장바구니 
-    Product[] carts = new Product[5];
+    // Product[] carts = new Product[5];
+    List<Product> carts = new ArrayList<>();
 
     // 사용자 등록
-    User[] users = new User[2];
-    // 초기화를 하지 않으면 null 상태 > 
+    // User[] users = new User[2];
+    List<User> users = new ArrayList<>();
 
     // 선택된 사용자 idx 보관
     private int selUser;
@@ -87,30 +91,31 @@ public class MyShop implements IShop {
                     break;
                 default:
                     int no = Integer.parseInt(sel);
-                    for (Product product : carts) {
-                        for (int j = 0; j < carts.length; j++) {
-                            if (carts[j] == null) {
-                                carts[j] = products[no];
-                                break;
-                            }
-                        }
+
+                    carts.add(products.get(no));
+                    // 상품 목록 보여주기
+                    productList();
+                    break;
+
+                // for (Product product : carts) {
+                    //     for (int j = 0; j < carts.size(); j++) {
+                        //         if (carts[j] == null) {
+                            //             carts[j] = products[no];
+                            //             break;
+                            //         }
+                            //     }
+                
                 // i = 0;
                 // if (product == null) {
                 //     carts[i] = products[no]; //카트에 담기
                 //     i++;
                 //     break;
                 // } 
-
             }
-
-            // 상품 목록 보여주기
-            productList();
-            break;
         }
 
             // sc.close();
             // 상품 목록 보여주기 
-            
             // System.out.printf("## %d 선택 ##\n", menu);
             // Scanner sc = new Scanner(System.in);
             // String str = sc.nextLine();
@@ -118,20 +123,13 @@ public class MyShop implements IShop {
             //     checkOut();
             // } else {
             //     start();
-            // }
-
-    }
-        
-        
+            // }        
         
     @Override
     public void checkOut(){
-        
         System.out.println(title +" : 체크아웃");
         System.out.println("==============================");
-        
         Scanner sc = new Scanner(System.in);
-        
         int i = 0;
         int sum = 0;
         for (Product product : carts) {
@@ -141,7 +139,7 @@ public class MyShop implements IShop {
             }
         }
         System.out.println("==============================");
-        System.out.println("결제 방법 : " + users[selUser].getPayType());
+        System.out.println("결제 방법 : " + users.get(selUser).getPayType());
         System.out.println("합계 : " + sum);
         System.out.println("[p] 이전, [q] 결제 완료" );
 
@@ -157,23 +155,22 @@ public class MyShop implements IShop {
                 checkOut();
                 break;
         }
-
     }
+
     @Override
     public void genUser(){
         // 2명의 사용자 등록
-        users[0] = new User("홍길동", PayType.CARD);
-        users[1] = new User("성춘향", PayType.CARD);
-
+        users.add(new User("홍길동", PayType.CARD));
+        users.add(new User("성춘향", PayType.CARD));
     }
     
     @Override
     public void genProduct(){
-        products[0] = new TV("SamsungTV", 2300000, "4K");
-        products[1] = new TV("LGUPlusTV", 1800000, "4K");
-        products[2] = new Cellphone("GalaxyS23", 1230000, "U+");
-        products[3] = new Cellphone("IPhone17", 1870000, "KT");
-        products[4] = new Cellphone("GalaxyZFlip", 2300000, "SKT");
+        products.add(new TV("SamsungTV", 2300000, "4K"));
+        products.add(new TV("LGUPlusTV", 1800000, "4K"));
+        products.add(new Cellphone("GalaxyS23", 1230000, "U+"));
+        products.add(new Cellphone("IPhone17", 1870000, "KT"));
+        products.add(new Cellphone("GalaxyZFlip", 2300000, "SKT"));
     }
-    
+   
 }
