@@ -1,4 +1,4 @@
-package student;
+package student2.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
