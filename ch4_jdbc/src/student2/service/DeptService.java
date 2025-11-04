@@ -1,6 +1,6 @@
 package student2.service;
 
-import static student2.repository.JDBCUtill.*;
+import static student2.repository.JDBCUtil.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;

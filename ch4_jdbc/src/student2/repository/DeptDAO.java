@@ -1,6 +1,6 @@
 package student2.repository;
 
-import static student2.repository.JDBCUtill.*;
+import static student2.repository.JDBCUtil.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -51,7 +51,7 @@ public class DeptDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            JDBCUtill.close(pstmt);
+            JDBCUtil.close(pstmt);
         }
         return result;
     }
@@ -104,7 +104,7 @@ public class DeptDAO {
         List<DeptDTO> list = new ArrayList<>();
         try {
 
-            String sql = "select * from department";
+            String sql = "select * from student";
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
 
@@ -112,8 +112,6 @@ public class DeptDAO {
                 String deptId = rs.getString("dept_id");
                 String deptName = rs.getString("dept_name");
 
-                // DeptDTO deptDTO = new DeptDTO(deptId, deptName);
-                // list.add(deptDTO);
                 list.add(new DeptDTO(deptId, deptName));
             }
 
